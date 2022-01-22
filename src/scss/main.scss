@@ -1,8 +1,36 @@
+@font-face {
+  font-family: 'OpenSans-VariableFont_wdth,wght';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('../fonts/OpenSans-VariableFont_wdth,wght.ttf') format('ttf'),
+        url('../fonts/OpenSans-VariableFont_wdth,wght.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'OpenSans-Italic-VariableFont_wdth,wght';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('../fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('ttf'),
+        url('../fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
 @import "vendors/bootstrap-grid.min";
+
+$opensans:              'OpenSans-VariableFont_wdth,wght', sans-serif, serif                !default;
+$opensans-italic:       'OpenSans-Italic-VariableFont_wdth,wght', sans-serif, serif         !default;
+
+$fw-light:      300     !default;
+$fw-normal:     400     !default;
+$fw-medium:     500     !default;
+$fw-semi-bold:  600     !default;
+$fw-bold:       700     !default;
+$fw-extra-bold: 800     !default;
+$fw-black:      900     !default;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-family: $opensans;
 }
