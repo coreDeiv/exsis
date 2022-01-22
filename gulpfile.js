@@ -27,7 +27,7 @@ gulp.task('sass', function () {
         Browserslist: ['>1%']
     })]))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('root/css'))
+    .pipe(gulp.dest('docs/css'))
     .pipe(browserSync.stream());
 });
 
@@ -35,7 +35,7 @@ gulp.task('css', function () {
     return gulp.src([
         'src/css/*css'
     ])
-    .pipe(gulp.dest('root/css'))
+    .pipe(gulp.dest('docs/css'))
 });
 
 gulp.task('scripts', function () {
@@ -49,7 +49,7 @@ gulp.task('scripts', function () {
     }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('root/js'))
+    .pipe(gulp.dest('docs/js'))
 });
 
 gulp.task('html', function () {
@@ -59,24 +59,24 @@ gulp.task('html', function () {
         basepath: '@file'
     }))
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('root'))
+    .pipe(gulp.dest('docs'))
 });
 
 gulp.task('images', function () {
     return gulp.src('src/media/**/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('root/media'));
+    .pipe(gulp.dest('docs/media'));
 });
 
 gulp.task('fonts', function () {
     return gulp.src('src/fonts/**/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('root/fonts'));
+    .pipe(gulp.dest('docs/fonts'));
 });
 
 gulp.task('watch', function () {
     browserSync.init({
-        server: 'root'
+        server: 'docs'
     });
     gulp.watch('src/fonts/**/*', gulp.series('fonts'));
     gulp.watch('src/media/**/*', gulp.series('images'));
@@ -88,7 +88,7 @@ gulp.task('watch', function () {
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: "./root/",
+            baseDir: "./docs/",
             directory: true
         }
     });
