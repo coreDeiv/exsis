@@ -62,3 +62,17 @@ function showItems(carousel, item) {
   if (carousel.querySelector(".dot.active") != null) carousel.querySelector(".dot.active").classList.remove("active");
   carousel.querySelectorAll(".dot")[item].classList.add("active");
 }
+
+// Form in Desktop
+if (window.matchMedia("(min-width: 1024px)").matches) {
+  document.querySelectorAll("#brand-car_item, #model-car_item, #year-car_item").forEach(elem => {
+    elem.innerHTML = "";
+  });
+} else {
+  document.querySelector("#brand-car_item").innerHTML = "<option value='0'>Marca del auto</option>";
+  document.querySelector("#model-car_item").innerHTML = "<option value='0'>Modelo del auto</option>";
+  document.querySelector("#year-car_item").innerHTML = "<option value='0'>Año</option>";
+  document.querySelectorAll("#brand-car_item, #model-car_item, #year-car_item").forEach(elem => {
+    elem.classList.add("form-control");
+  });
+}

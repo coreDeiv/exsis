@@ -2,6 +2,9 @@
   background-color: $footer-bg;
   padding: 2rem 0;
   margin-top: 3.85rem;
+  @include mq(tablet-md, max) {
+    margin-top: 0;
+  }
   &-list li {
     &::marker {
       color: $white;
