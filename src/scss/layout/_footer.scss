@@ -2,6 +2,13 @@
   background-color: $footer-bg;
   padding: 2rem 0;
   margin-top: 3.85rem;
+  &-col__nav {
+    .footer-list {
+      @media screen and (max-width: 576px) {
+        margin-left: 1rem;
+      }
+    }
+  }
   @include mq(tablet-md, max) {
     margin-top: 0;
   }

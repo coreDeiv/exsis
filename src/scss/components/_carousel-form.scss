@@ -167,7 +167,10 @@
           color: $muted;
         }
       }
-      select, option { color: $muted; }
+      select, option { 
+        color: $muted; 
+        background-color: $white;
+      }
       select option:first-child {
         opacity: 0;
         visibility: hidden;
@@ -203,7 +206,7 @@
     max-height: 436px;
     &.col-10.col-sm-5.col-xl-4 {
       @media screen and (max-width: 576px) {
-        margin-top: -10rem; 
+        margin-top: -3rem; 
         margin-bottom: 5rem;
       }
     }
