@@ -1,3 +1,19 @@
-header.header {
-  background-color: $header-bg;
+header {
+  @include mq(tablet-md, max) {
+    ~ main {
+      margin-top: var(--height-of-header-mobile);
+    }  
+  }
+  &.header {
+    background-color: $header-bg;
+    @include mq(tablet-md, max) {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+      height: auto;
+      z-index: 99;
+    }
+  }
 }

@@ -1,3 +1,9 @@
+
+:root {
+  --height-of-header-desktop: 85px;
+  --height-of-header-mobile: 65px;
+}
+
 $opensans:              'Open Sans', sans-serif, serif                !default;
 
 $fw-light:          300         !default;
@@ -11,22 +17,22 @@ $fw-black:          900         !default;
 /* Colors */
 
 // Components Color
-$header-bg:       #4d4d4d     !default;
-$submenu-bg:      #212121     !default;
-$footer-bg:       #7c7c7c     !default;
+$header-bg:         #4d4d4d     !default;
+$submenu-bg:        #212121     !default;
+$footer-bg:         #7c7c7c     !default;
 
 // General
-$white:           #ffffff     !default;
-$black:           #000000     !default;
-$muted:           #999999     !default;
-$info:            #36a9db     !default;
-$light:           #e6e6e6     !default;
-$success:         #bbd550     !default;
-$success-darkest: #9cb030     !default;
+$white:             #ffffff     !default;
+$black:             #000000     !default;
+$muted:             #999999     !default;
+$info:              #36a9db     !default;
+$light:             #e6e6e6     !default;
+$success:           #bbd550     !default;
+$success-darkest:   #9cb030     !default;
 
 // Header
-$text-header:     #ffffff     !default;
-$text-subheader:  #c6c6c6     !default;
+$text-header:       #ffffff     !default;
+$text-subheader:    #c6c6c6     !default;
 
 /* Images */
 $arrow-down:     url('../images/arrow-down.PNG')   !default;

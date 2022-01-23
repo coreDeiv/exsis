@@ -1,10 +1,44 @@
 .nav {
+  &-row {
+    position: relative;
+  }
   &-col {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  &-burguer {
+    display: none;
+    @include mq(tablet-md, max) {
+      display: block;
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      transform: translateY(-50%);
+      z-index: 1;
+      a {
+        i, svg {
+          color: $white;
+          font-size: 2rem;
+          &.fa-times { display: none; }
+        }
+        &.active-menu {
+          i, svg {
+            display: none;
+            &:nth-child(2) { display: block; }
+          }
+        }
+      }
+    }
+  }
   &-brand {
+    @include mq(tablet-md, max) {
+      width: 100%;
+      text-align: center;
+    }
+    @include mq(tablet-md, max) {
+      margin-left: 100px;
+    }
     a {
       display: block;
       padding: 10px 0;
@@ -13,9 +47,40 @@
   &-menu {
     display: block;
     position: relative;
+    @include mq(tablet-md, max) {
+      display: none;
+      &.show {
+        display: block !important;
+        position: fixed;
+        top: var(--height-of-header-mobile);
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: $submenu-bg;
+        z-index: 9;
+        .nav-menu_list {
+          flex-direction: column;
+          ul li a {
+            padding: 0 !important;
+          }
+        }
+      }
+    }
     &_list {
       display: flex;
       list-style: none;
+      @include mq(tablet-md, max) {
+        position: relative;
+        margin-left: 1rem;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 1rem;
+          bottom: 1rem;
+          left: 0;
+          border-left: 2px solid $muted;
+        }
+      }
       &--item {
         display: inline-block;
         a {
@@ -23,6 +88,13 @@
           color: $text-header;
           padding: 32px 20px;
           display: block;
+          @include mq(tablet-md, max) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+          }
           &:hover {
             text-decoration: underline;
             ~ .nav-submenu { 
@@ -44,17 +116,49 @@
     background-color: $submenu-bg;
     display: none;
     position: fixed;
-    top: 85px;
+    top: var(--height-of-header-desktop);
     left: 0;
     right: 0;
     width: 100%;
     height: auto;
     z-index: 1;
+    @include mq(tablet-md, max) {
+      position: unset;
+      display: none;
+    }
     &_list {
       @extend .container;
       display: flex;
+      @include mq(tablet-md, max) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 0rem;
+        width: 95% !important;
+        max-width: 95% !important;
+        margin-left: 1rem;
+      }
+      @include mq(phone-lg, max) {
+        width: 90% !important;
+        max-width: 90% !important;
+      }
       &--item {
         display: inline-block;
+        position: relative;
+        @include mq(tablet-md, max) {
+          &::before {
+            content: "·";
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-52.5%);
+            color: $muted;
+            font-size: 3rem;
+          }
+          a {
+            padding: 1rem;
+          }
+        }
         a {
           display: block;
           padding: 10px 20px;
@@ -68,6 +172,24 @@
           padding-left: 0px;
         }
       }
+    }
+  }
+}
+
+.fa-angle-down {
+  display: none;
+  @include mq(tablet-md, max) {
+    display: block;
+  }
+}
+
+.dropdown {
+  ~ .nav-submenu {
+    display: none !important;
+  }
+  &-show {
+    ~ .nav-submenu {
+      display: block !important;
     }
   }
 }

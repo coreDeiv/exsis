@@ -143,7 +143,10 @@
         }
       }
       input::placeholder {
-        color: $muted;
+        color: transparent;
+        @include mq(tablet-md, max) {
+          color: $muted;
+        }
       }
       select, option { color: $muted; }
       select option:first-child {

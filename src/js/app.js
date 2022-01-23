@@ -76,3 +76,22 @@ if (window.matchMedia("(min-width: 1024px)").matches) {
     elem.classList.add("form-control");
   });
 }
+
+/* Menu Header */
+document.querySelector("#open-menu").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#open-menu").classList.toggle("active-menu");
+  document.querySelector("#nav-menu").classList.toggle("show");
+});
+
+document.querySelectorAll(".dropdown").forEach(elem => {
+  elem.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.currentTarget.classList.toggle("dropdown-show");
+  });
+});
+
+/* Resize Window */
+window.addEventListener("resize", () => {
+  window.location.reload();
+});
