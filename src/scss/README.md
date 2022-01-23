@@ -45,24 +45,3 @@ sass/
 |   …                     # Etc.
 |
 `– main.scss              # Main Sass file
-
-// Breakpoints
-$breakpoints: (
-
-  "phone-xs":   320px,    
-  "phone-sm":   375px,  
-  "phone-md":   420px,
-  "phone-lg":   520px,
-  "phone-xl":   640px,
-  "phone-xxl":  813px,
-
-  "tablet-sm":  768px,
-  "tablet-md":  1024px,
-  "tablet-lg":  1224px,
-
-  "desk-sm":    1140px,
-  "desk-md":    1280px,
-  "desk-lg":    1440px, 
-  "desk-xxl":   1680px,
-
-);
