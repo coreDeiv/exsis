@@ -1,0 +1,19 @@
+.mt {
+  display: block;
+  width: 100%;
+  height: auto;
+  &-col {
+    text-align: center;
+    padding: 1rem 0;
+    h1 {
+      font-size: 2.25rem;
+      color: $info;
+      font-weight: $fw-semi-bold;
+    }
+    h4 {
+      color: $muted;
+      font-weight: $fw-semi-bold;
+      font-size: 1rem;
+    }
+  }
+}

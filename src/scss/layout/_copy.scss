@@ -1,0 +1,11 @@
+.copy {
+  background-color: $black;
+  &-col {
+    text-align: center;
+    padding: .5rem 0;
+    p {
+      color: $white;
+      font-size: .75rem;
+    }
+  }
+}
