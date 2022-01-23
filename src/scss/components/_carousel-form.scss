@@ -22,6 +22,10 @@
       margin: 0 !important;
       padding: 0 !important;
     }
+    @include mq(phone-xl, max) {
+      height: auto;
+      overflow: auto;
+    }
   }
   &::after {
     content: '';
@@ -48,6 +52,10 @@
       min-height: 436px;
       width: 100vw;
     }
+    @include mq(phone-xl, max) {
+      min-height: unset !important;
+      height: auto !important;
+    }
     &_item {
       display: none;
       position: relative;
@@ -57,6 +65,10 @@
         @include mq(desk-md, max) {
           min-height: 436px;
         }
+        @include mq(phone-xl, max) {
+          min-height: unset !important;
+          height: auto !important;
+        }
         img {
           width: auto;
           max-width: 100%;
@@ -65,6 +77,10 @@
           object-position: center;
           @include mq(desk-md, max) {
             min-height: 436px;
+          }
+          @include mq(phone-xl, max) {
+            min-height: unset !important;
+            height: auto !important;
           }
         }
       }
@@ -92,6 +108,9 @@
       bottom: 20px;
       @include mq(tablet-md, max) {
         left: 10%;
+      }
+      @media screen and (max-width: 576px) {
+        display: none;
       }
       a {
         display: inline-flex;
@@ -182,6 +201,12 @@
   &-col {
     height: 100%;
     max-height: 436px;
+    &.col-10.col-sm-5.col-xl-4 {
+      @media screen and (max-width: 576px) {
+        margin-top: -10rem; 
+        margin-bottom: 5rem;
+      }
+    }
   }
   &-submit-group {
     border: none !important;
