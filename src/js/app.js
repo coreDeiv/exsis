@@ -25,7 +25,7 @@ function insertNumbers(carousel) {
 
   for (let i = 0; i < length; i++) {
     const nmbr = document.createElement("div");
-    nmbr.classList.add("numbertext");
+    nmbr.classList.add("sf-carousel_item--counter");
     nmbr.innerText = i + 1 + " / " + length;
     carousel.querySelectorAll(".item")[i].append(nmbr);
   }

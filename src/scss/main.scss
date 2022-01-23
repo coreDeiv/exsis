@@ -37,8 +37,10 @@ $footer-bg:       #7c7c7c     !default;
 
 // General
 $white:           #ffffff     !default;
+$black:           #000000     !default;
 $muted:           #999999     !default;
 $info:            #36a9db     !default;
+$light:           #e6e6e6     !default;
 
 // Header
 $text-header:     #ffffff     !default;
@@ -147,5 +149,88 @@ header.header {
       font-weight: $fw-semi-bold;
       font-size: 1rem;
     }
+  }
+}
+
+.sf {
+  padding: 2rem 0;
+  position: relative;
+  &-container {
+    overflow: hidden;
+    height: 436px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 69px;
+    background-color: $info;
+    z-index: -1;
+  }
+  &-carousel {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 436px;
+    &_item {
+      display: none;
+      position: relative;
+      width: 100%;
+      &--image {
+        max-height: 100%;
+        img {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      &--counter {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 2;
+        color: #000;
+        background-color: $white;
+        padding: 0 5px;
+        font-weight: $fw-semi-bold;
+        text-align: center;
+        font-size: .75rem;
+        box-shadow: 0px 0px 5px rgba(0,0,0,.1);
+      }
+    }
+    &_navigator {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      a {
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $white;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        cursor: pointer;
+        &:first-child { margin-left: 20px; }
+        i, svg {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  &-form {
+    background-color: $light;
+  }
+  &-col {
+    height: 100%;
+    max-height: 436px;
   }
 }
