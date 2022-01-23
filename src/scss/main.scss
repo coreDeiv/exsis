@@ -41,10 +41,15 @@ $black:           #000000     !default;
 $muted:           #999999     !default;
 $info:            #36a9db     !default;
 $light:           #e6e6e6     !default;
+$success:         #bbd550     !default;
+$success-darkest: #9cb030     !default;
 
 // Header
 $text-header:     #ffffff     !default;
 $text-subheader:  #c6c6c6     !default;
+
+/* Images */
+$arrow-down:     url('../images/arrow-down.PNG')   !default;
 
 * {
   box-sizing: border-box;
@@ -228,6 +233,36 @@ header.header {
   }
   &-form {
     background-color: $light;
+    height: 100%;
+    min-height: 436px;
+    &-group {
+      padding: .25rem 1rem;
+      width: 100%;
+      text-align: center;
+      label, input, select {
+        display: block;
+        width: 100%;
+        padding: .35rem;
+        border: none;
+        text-align: left;
+        &:focus {
+          outline: none;
+        }
+      }
+      label { color: $muted; }
+      &:first-child { padding-top: 1rem; }
+      button[type="submit"] {
+        margin-top: 1rem;
+        display: inline-block;
+        background-color: $success;
+        padding: 10px 50px;
+        border: none;
+        box-shadow: 0px 2px 5px $success-darkest;
+        cursor: pointer;
+        font-weight: $fw-semi-bold;
+        color: $white;
+      }
+    }
   }
   &-col {
     height: 100%;
