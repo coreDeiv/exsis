@@ -28,10 +28,100 @@ $fw-bold:       700     !default;
 $fw-extra-bold: 800     !default;
 $fw-black:      900     !default;
 
+/* Colors */
+
+// Components Color
+$header-bg:   #4d4d4d     !default;
+$submenu-bg:  #212121     !default;
+$footer-bg:   #7c7c7c     !default;
+
+// General
+$white:       #ffffff     !default;
+$muted:       #999999     !default;
+$info:        #36a9db     !default;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 16px;
   font-family: $opensans;
+}
+
+header.header {
+  background-color: $header-bg;
+}
+
+.nav {
+  &-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-brand {
+    a {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+  &-menu {
+    display: block;
+    position: relative;
+    &_list {
+      display: flex;
+      list-style: none;
+      &--item {
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: $white;
+          padding: 32px 20px;
+          display: block;
+          &:hover {
+            text-decoration: underline;
+            ~ .nav-submenu { 
+              display: block; 
+              &:hover { display: block; }
+            }
+          }
+          ~ .nav-submenu {
+            &:hover { display: block; }
+          }
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-submenu {
+    background-color: $submenu-bg;
+    display: none;
+    position: fixed;
+    top: 85px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    &_list {
+      @extend .container;
+      display: flex;
+      &--item {
+        display: inline-block;
+        a {
+          display: block;
+          padding: 10px 20px;
+          color: $footer-bg;
+          span {
+            color: $footer-bg;
+          }
+          &:hover { text-decoration: underline; }
+        }
+        &:first-child a {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
 }
