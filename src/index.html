@@ -16,14 +16,23 @@
     <div id="wrap-wrap" class="wrap-wrap">
 
       @@include('web/index/_header.html')
-      @@include('web/partials/_main-article.html')      
+      
+      <main>
+        @@include('web/partials/_main-article.html')
+        @@include('web/partials/_slider-form.html')
+      </main>
+      
+      @@include('web/index/_footer.html')
+      @@include('web/index/_copy.html')
 
     </div>
 
     <!-- @@include('web/partials/_preload.html') -->
 
+    <script src='https://kit.fontawesome.com/25f07c253e.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="./js/vendors/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="./js/vendors/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
