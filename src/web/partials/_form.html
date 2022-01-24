@@ -1,49 +1,54 @@
-<form action="#" class="sf-form" id="form-cars" method="get">
+<form action="#" class="sf-form" id="form-cars">
   <div class="form-group sf-form-group">
     <label for="brand-car">Marca del Auto</label>
-    <select name="brand-car" id="brand-car" required>
+    <select name="brand-car" id="brand-car">
       <option value="" id="brand-car_item">Marca del Auto</option>
       <option value="carro-1">Carro 1</option>
       <option value="carro-2">Carro 2</option>
       <option value="carro-3">Carro 3</option>
       <option value="carro-4">Carro 4</option>
     </select>
+    <span class="error">Todos los campos deben de ser seleccionados</span>
   </div>
   <div class="row no-gutters">
     <div class="col-8 col-xl-6">
-      <div class="form-group sf-form-group w-50">
+      <div class="form-group sf-form-group w-50 pt-0">
         <label for="model-car">Modelo del Auto</label>
-        <select name="model-car" id="model-car" required>
+        <select name="model-car" id="model-car">
           <option value="" id="model-car_item">Modelo del Auto</option>
           <option value="modelo-1">Modelo 1</option>
           <option value="modelo-2">Modelo 2</option>
           <option value="modelo-3">Modelo 3</option>
           <option value="modelo-4">Modelo 4</option>
         </select>
+        <span class="error">Todos los campos deben de ser seleccionados</span>
       </div>
     </div>
     <div class="col-4 col-xl-6">
-      <div class="form-group sf-form-group w-50">
+      <div class="form-group sf-form-group w-50 pt-0">
         <label for="year-car">Año</label>
-        <select name="year-car" id="year-car" required>
+        <select name="year-car" id="year-car">
           <option value="" id="year-car_item">Año</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
           <option value="2019">2019</option>
         </select>
+        <span class="error">Todos los campos deben de ser seleccionados</span>
       </div>
     </div>
   </div>
   <div class="form-group sf-form-group">
     <label for="user-email">Email</label>
-    <input type="email" name="user-email" id="user-email" required placeholder="Email">
+    <input type="email" name="user-email" id="user-email" placeholder="Email">
+    <span class="error">Verifique que el correo este bien escrito, con el '@' y dominio</span>
   </div>
   <div class="form-group sf-form-group">
     <label for="user-phone">Telefono Celular</label>
-    <input type="tel" name="user-phone" id="user-phone" pattern="+57[0-9]{3}[0-9]{7}" required placeholder="Telefono Celular">
+    <input type="tel" name="user-phone" id="user-phone" placeholder="Telefono Celular">
+    <span class="error">El numero de celular, no es un numero valido para colombia</span>
   </div>
   <div class="form-group sf-form-group sf-submit-group">
-    <button type="submit">Cotizar Ahora</button>
+    <button id="submit" type="submit">Cotizar Ahora</button>
   </div>
 </form>

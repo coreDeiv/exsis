@@ -77,6 +77,72 @@ if (window.matchMedia("(min-width: 1024px)").matches) {
   });
 }
 
+document.querySelector("#submit").addEventListener("click", e => {
+  if (document.querySelector("#brand-car").value == 0) {
+    document.querySelector("#brand-car").classList.add("is-invalid");
+    e.preventDefault();
+  }
+});
+
+document.querySelector("#submit").addEventListener("click", e => {
+  if (document.querySelector("#model-car").value == 0) {
+    document.querySelector("#model-car").classList.add("is-invalid");
+    e.preventDefault();
+  }
+});
+
+document.querySelector("#submit").addEventListener("click", e => {
+  if (document.querySelector("#year-car").value == 0) {
+    document.querySelector("#year-car").classList.add("is-invalid");
+    e.preventDefault();
+  }
+});
+
+document.querySelector("#user-email").addEventListener("blur", e => {
+  if (e.target.value.indexOf("@") == -1) {
+    e.target.classList.add("is-invalid");
+  } else {
+    e.target.classList.remove("is-invalid");
+  }
+});
+
+document.querySelector("#form-cars").addEventListener("submit", e => {
+  if (document.querySelector("#user-email").value == 0) {
+    document.querySelector("#user-email").classList.add("is-invalid");
+    e.preventDefault();
+  }
+  if (document.querySelector("#user-phone").value == 0) {
+    document.querySelector("#user-phone").classList.add("is-invalid");
+    e.preventDefault();
+  }
+});
+
+document.querySelector("#user-phone").addEventListener("blur", e => {
+  if (e.target.value.match(/^(\+57|0057|57)?[ -]*(3)[ -]*([0-9][ -]*){9}$/)) {
+    e.target.classList.remove("is-invalid");
+  } else {
+    e.target.classList.add("is-invalid");
+  }
+});
+
+document.querySelector("#form-cars").addEventListener("submit", e => {
+  e.preventDefault();
+  localStorage.setItem("brand", document.querySelector("#brand-car").value);
+  localStorage.setItem("model", document.querySelector("#model-car").value);
+  localStorage.setItem("year", document.querySelector("#year-car").value);
+  localStorage.setItem("email", document.querySelector("#user-email").value);
+  localStorage.setItem("phone", document.querySelector("#user-phone").value);
+  
+  document.querySelector("#brandCar-form").innerText = document.querySelector("#brand-car").value;
+  document.querySelector("#modelCar-form").innerText = document.querySelector("#model-car").value;
+  document.querySelector("#yearCar-form").innerText = document.querySelector("#year-car").value;
+  document.querySelector("#emailUser-form").innerText = document.querySelector("#user-email").value;
+  document.querySelector("#phoneUser-form").innerText = document.querySelector("#user-phone").value;
+
+  document.querySelector("#modal-form-home").classList.add("active-modal");
+
+});
+
 /* Menu Header */
 document.querySelector("#open-menu").addEventListener("click", (e) => {
   e.preventDefault();
@@ -93,5 +159,13 @@ document.querySelectorAll(".dropdown").forEach(elem => {
 
 /* Resize Window */
 window.addEventListener("resize", () => {
+  window.location.reload();
+});
+
+/* Modal */
+// Al darle click al boton con id ="close-modal", le quita la clase "active-modal" al id "modal-form-home" y reinicia la pagina
+document.querySelector("#close-modal").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#modal-form-home").classList.remove("active-modal");
   window.location.reload();
 });
